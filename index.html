@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+    <title>Inicio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<meta charset="UTF-8">
+<title>Sobre nosotros</title>
+
+ <!-- Importar Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  /* Títulos */
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Texto general */
+        body, p {
+            font-family: 'Nunito', sans-serif;
+        }
+    body {
+        margin: 0;
+        font-family: <font face="Poppins ExtraBold"></font>;
+        background: #f2f4f7;
+    }
+
+    /* ---------------- HEADER ---------------- */
+     header {
+        display: flex;
+        align-items: center;
+        background: #f07ca5;
+        padding: 10px 20px;
+        color: white;
+    }
+
+    header img {
+        height: 60px;
+        margin-right: 20px;
+    }
+
+    /* Barra de b�squeda */
+    .search-bar {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .search-bar input {
+        padding: 6px 10px;
+        border: none;
+        border-radius: 5px;
+        width: 200px;
+    }
+
+    /* ---------------- MEN� ---------------- */
+    nav {
+        background: #e15b8b;
+        padding: 10px;
+        display: flex;
+        gap: 20px;
+        color: white;
+        font-weight: bold;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    /* ---------------- CONTENIDO PRINCIPAL ---------------- */
+    .contenedor-principal {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        width: 90%;
+        max-width: 1100px;
+        margin: 25px auto;
+    }
+
+    /* Imagen/Presentaci�n principal */
+    .presentacion {
+        background: white;
+        padding: 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        overflow: hidden;
+    }
+
+    .presentacion img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    /* Texto de sobre nosotros */
+    .sobre-nosotros {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 15px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .sobre-nosotros h2 {
+        color: #f06c9a;
+        margin-top: 0;
+    }
+
+    .sobre-nosotros p {
+        text-align: justify;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* ---------------- LADO DERECHO ---------------- */
+    .lado-derecho {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .caja {
+        
+		background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .caja img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .caja button {
+        width: 100%;
+        padding: 12px;
+        background: #badf31;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .caja button:hover {
+        background: #2c4360;
+    }
+
+.search-bar1 {        margin-left: auto;
+        display: flex;
+        align-items: center;
+}
+.Estilo1 {background: white; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); text-align: center; overflow: hidden; font-family: Poppins, "Poppins Black"; }
+.Estilo2 {font-family: Inter}
+.Estilo4 {font-family: Poppins, "Poppins Black"}
+.Estilo6 {font-family: "Now Alt"}
+</style>
+</head>
+<script>
+function buscarContenido() {
+    let query = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if (query === "") {
+        alert("Escribe algo para buscar");
+        return;
+    }
+
+    // PALABRAS CLAVE → PÁGINAS
+    const rutas = {
+        "sobre nosotros": "index.html",
+        "nosotros": "index.html",
+        "individual": "individual.html",
+        "espacio individual": "individual.html",
+        "grupal": "grupal.html",
+        "espacio grupal": "grupal.html",
+        "servicios": "https://psicologoenperu.com/listado-de-psicologos-peru/",
+        "actividades": "https://classroom.google.com/c/ODIxMDA2NTQ3NTMx?cjc=xbji7hip",
+        "profesionales": "https://tupsicologo.pe/todos-nuestros-profesionales/",
+        "contacto": "https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI",
+        "whatsapp": "https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI",
+		"psicología": "psicologia.html",
+		"recursos": "recursos.html",
+		"guías": "guias.html",
+		"podcast": "podcast.html",
+		"relajación": "relajacion.html",
+		"reuniones": "reuniones.html",
+		"foros": "foros.html",
+		"libros": "libros.html",
+		"arte": "arte.html"
+    };
+
+    // Buscar coincidencias
+    for (let palabra in rutas) {
+        if (query.includes(palabra)) {
+            window.location.href = rutas[palabra];
+            return;
+        }
+    }
+
+    alert("No se encontró ningún resultado para: " + query);
+}
+</script>
+
+<body>
+
+<!-- ---------------- HEADER ---------------- -->
+<header>
+    <img src="psychis_logo.png" alt="img" longdesc="psychislogo1"><img src="psychis_logo2.png" alt="img" longdesc="psychislogo2">
+
+    <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Buscar..." onKeyPress="if(event.key==='Enter'){buscarContenido();}">
+</div>
+
+</header>
+
+<!-- ---------------- MEN� ---------------- -->
+<span class="Estilo6">
+<nav>
+  <a href="index.html">Inicio </a>
+  <a href="https://tupsicologo.pe/todos-nuestros-profesionales/">Profesionales</a>
+  <a href="https://psicologoenperu.com/listado-de-psicologos-peru/">Servicios</a>
+  <a href="https://classroom.google.com/c/ODIxMDA2NTQ3NTMx?cjc=xbji7hip">Actividades</a>
+  <a href="https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI">Contacto</a></nav>
+</span>
+<!-- ---------------- CONTENIDO PRINCIPAL ---------------- -->
+<div class="contenedor-principal">
+    <!-- LADO IZQUIERDO -->
+    <div>
+        <!-- Presentaci�n principal -->
+        <div class="presentacion"></div>
+		     <img src="sobre_nosotros.jpg" alt="img" longdesc="sobrenosotros">
+		<!-- SOBRE NOSOTROS -->
+        <div class="sobre-nosotros"> 
+            <h2 class="Estilo1">Sobre Nosotros</h2>
+            <p class="Estilo2">
+                Nuestra plataforma digital está diseñada para brindar un acceso rápido y seguro a diversos
+                profesionales de la salud mental. Aquí podrás encontrar especialistas de distintas áreas,
+                permitiendo al usuario elegir al profesional que mejor se adapte a sus necesidades emocionales,
+                terapéuticas o psiquiátricas.            </p>
+            <p class="Estilo2">
+                Además, contamos con herramientas de seguimiento que facilitan el monitoreo de tratamientos
+                médicos o terapias psicológicas, garantizando un acompañamiento continuo y personalizado.
+                Nuestra misión es ofrecer un espacio accesible, confiable y humano, orientado al bienestar
+                integral de cada persona.            </p>
+        </div>
+    </div>
+
+    <!-- LADO DERECHO -->
+    <div class="lado-derecho">
+
+        <!-- ESPACIO INDIVIDUAL -->
+        <div class="caja">
+            <img src="individual_1.jpg" alt="img" longdesc="espacio_individual">
+            <button onClick="location.href='individua_l.html'"><span class="Estilo4">Espacio Individual</span></button>
+        </div>
+
+        <!-- ESPACIO GRUPAL -->
+        <div class="caja">
+            <img src="espacio_grupal.jpg" alt="img" longdesc="espacio_grupal">
+            <button onClick="location.href='grupal.html'"><span class="Estilo4">Espacio Grupal</span></button>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
