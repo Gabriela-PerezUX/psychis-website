@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicología</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            display: block;
+            text-decoration: none;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform .2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 10px;
+        }
+
+        .card p {
+            margin: 10px;
+            opacity: 0.8;
+        }
+    .Estilo1 {
+	font-family: "Poppins Black";
+	color: #f07ca5;
+}
+    .Estilo2 {font-family: "Now Alt"}
+    </style>
+</head>
+<style>
+    body {
+        margin: 0;
+        background: #f2f4f7;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    /* HEADER */
+    header {
+        display: flex;
+        align-items: center;
+        background: #f07ca5;
+        padding: 10px 20px;
+        color: white;
+    }
+
+    header img {
+        height: 60px;
+        margin-right: 20px;
+    }
+
+    .search-bar {
+        margin-left: auto;
+    }
+
+    .search-bar input {
+        padding: 6px 10px;
+        border: none;
+        border-radius: 5px;
+        width: 200px;
+    }
+
+    /* MEN? */
+   nav {
+        background: #e15b8b;
+        padding: 10px;
+        display: flex;
+        gap: 20px;
+        color: white;
+        font-weight: bold;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    /* CONTENIDO */
+    .contenedor {
+        width: 90%;
+        max-width: 1100px;
+        margin: 25px auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+    }
+
+    /* T?TULO */
+    .titulo-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .titulo-area h2 {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        font-size: 24px;
+        color: #2c3e50;
+    }
+
+    /* ICONOS */
+    .iconos {
+        display: flex;
+        gap: 15px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    /* TARJETAS */
+    .tarjetas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+
+    .card img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .card h3 {
+        font-family: 'Poppins', sans-serif;
+        margin: 10px 0;
+    }
+
+    .card p {
+        padding: 0 10px 10px;
+        font-size: 14px;
+        color: #444;
+    }
+
+    /* LADO DERECHO (ACTIVIDADES) */
+    .info {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .info h3 {
+        font-family: 'Poppins', sans-serif;
+        color: #e15b8b;
+        margin-top: 0;
+    }
+
+    .info ul {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+</style>
+</head>
+
+<script>
+function buscarContenido() {
+    let query = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if (query === "") {
+        alert("Escribe algo para buscar");
+        return;
+    }
+
+    // PALABRAS CLAVE → PÁGINAS
+    const rutas = {
+        "sobre nosotros": "inicio.html",
+        "nosotros": "inicio.html",
+        "individual": "individual.html",
+        "espacio individual": "individual.html",
+        "grupal": "grupal.html",
+        "espacio grupal": "grupal.html",
+        "servicios": "https://psicologoenperu.com/listado-de-psicologos-peru/",
+        "actividades": "https://classroom.google.com/c/ODIxMDA2NTQ3NTMx?cjc=xbji7hip",
+        "profesionales": "https://tupsicologo.pe/todos-nuestros-profesionales/",
+        "contacto": "https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI",
+        "whatsapp": "https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI",
+		"psicología": "psicología.html",
+		"recursos": "recursos.html",
+		"guías": "guías.html",
+		"podcast": "podcast.html",
+		"relajación": "relajación.html",
+		"reuniones": "reuniones.html",
+		"foros": "foros.html",
+		"libros": "libros.html",
+		"arte": "arte.html"
+    };
+
+    // Buscar coincidencias
+    for (let palabra in rutas) {
+        if (query.includes(palabra)) {
+            window.location.href = rutas[palabra];
+            return;
+        }
+    }
+
+    alert("No se encontró ningún resultado para: " + query);
+}
+</script>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <img src="psychis_logo.png" alt="logo" longdesc="logo_psychis"><img src="psychis_logo2.png" alt="logo" longdesc="logo_psychis2">
+
+    <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Buscar..." onKeyPress="if(event.key==='Enter'){buscarContenido();}">
+</div>
+
+</header>
+<!-- MEN? -->
+<span class="Estilo2">
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="https://tupsicologo.pe/todos-nuestros-profesionales/">Profesionales</a>
+  <a href="https://psicologoenperu.com/listado-de-psicologos-peru/">Servicios</a>
+  <a href="https://classroom.google.com/c/ODIxMDA2NTQ3NTMx?cjc=xbji7hip">Actividades</a>
+  <a href="https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI">Contacto</a></nav>
+</span>
+<body>
+<h1> <span class="Estilo1">Psicologia</span> <img src="icono4.png" alt="icono" longdesc="psicologia" width="42" height="40" longdesc="icono3_Arte"></h1>
+
+    <div class="container">
+
+        <!-- Gu�as y art�culos informativos -->
+		<a href="guías.html" class="card">
+			     <img src="guiasimg.jpg" alt="img" longdesc="gu�as_img" />				 
+				 <h3>Guías y artículos informativos</h3>
+				 <p> Encuentra contenido claro y confiable sobre temas relacionados con la salud mental. Aquí podrás explorar explicaciones sencillas, consejos prácticos y orientaciones profesionales que te ayudarán a comprender mejor tus emociones, identificar señales importantes y fortalecer tu bienestar día a día.</p>
+	  </a>
+	  
+	  <!-- Recursos prácticos y descargables -->
+		<a href="recursos.html" class="card">
+			     <img src="recursos.jpg" alt="img" longdesc="recursos">				 
+				 <h3>Recursos prácticos y descargables</h3>
+				 <p> Herramientas listas para usar, diseñadas para acompañarte en tu bienestar emocional. Aquí encontrarás plantillas, fichas, ejercicios y materiales útiles que puedes descargar fácilmente para aplicar en tu vida diaria, estudiar, organizarte o trabajar tu salud mental de manera práctica y sencilla.</p>
+	  </a>
+	  
+			
+
+    </div>
+
+</body>
+</html>

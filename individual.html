@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Espacio Individual</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        background: #f2f4f7;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    /* HEADER */
+    header {
+        display: flex;
+        align-items: center;
+        background: #f07ca5;
+        padding: 10px 20px;
+        color: white;
+    }
+
+    header img {
+        height: 60px;
+        margin-right: 20px;
+    }
+
+    .search-bar {
+        margin-left: auto;
+    }
+
+    .search-bar input {
+        padding: 6px 10px;
+        border: none;
+        border-radius: 5px;
+        width: 200px;
+    }
+
+    /* MEN� */
+    nav {
+        background: #e15b8b;
+        padding: 10px;
+        display: flex;
+        gap: 20px;
+        color: white;
+        font-weight: bold;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    /* CONTENIDO */
+    .contenedor {
+        width: 90%;
+        max-width: 1100px;
+        margin: 25px auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+    }
+
+    /* T�TULO */
+    .titulo-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .titulo-area h2 {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        font-size: 24px;
+        color: #2c3e50;
+    }
+
+    /* ICONOS */
+    .iconos {
+        display: flex;
+        gap: 15px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    /* TARJETAS */
+    .tarjetas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+
+    .card img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .card h3 {
+        font-family: 'Poppins', sans-serif;
+        margin: 10px 0;
+    }
+
+    .card p {
+        padding: 0 10px 10px;
+        font-size: 14px;
+        color: #444;
+    }
+
+    /* LADO DERECHO (ACTIVIDADES) */
+    .info {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .info h3 {
+        font-family: 'Poppins', sans-serif;
+        color: #e15b8b;
+        margin-top: 0;
+    }
+
+    .info ul {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+.Estilo1 {font-family: "Now Alt"}
+</style>
+</head>
+<script>
+function buscarContenido() {
+    let query = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if (query === "") {
+        alert("Escribe algo para buscar");
+        return;
+    }
+
+    // PALABRAS CLAVE → PÁGINAS
+    const rutas = {
+        "sobre nosotros": "inicio.html",
+        "nosotros": "inicio.html",
+        "individual": "individual.html",
+        "espacio individual": "individual.html",
+        "grupal": "grupal.html",
+        "espacio grupal": "grupal.html",
+        "servicios": "https://psicologoenperu.com/listado-de-psicologos-peru/",
+        "actividades": "https://classroom.google.com/c/ODIxMDA2NTQ3NTMx?cjc=xbji7hip",
+        "profesionales": "https://tupsicologo.pe/todos-nuestros-profesionales/",
+        "contacto": "https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI",
+        "whatsapp": "https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI",
+		"psicología": "psicología.html",
+		"recursos": "recursos.html",
+		"guías": "guías.html",
+		"podcast": "podcast.html",
+		"relajación": "relajación.html",
+		"reuniones": "reuniones.html",
+		"foros": "foros.html",
+		"libros": "libros.html",
+		"arte": "arte.html"
+    };
+
+    // Buscar coincidencias
+    for (let palabra in rutas) {
+        if (query.includes(palabra)) {
+            window.location.href = rutas[palabra];
+            return;
+        }
+    }
+
+    alert("No se encontró ningún resultado para: " + query);
+}
+</script>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <img src="psychis_logo.png" alt="logo" longdesc="logo_psychis"><img src="psychis_logo2.png" alt="logo" longdesc="logo_psychis2">
+
+    <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Buscar..." onKeyPress="if(event.key==='Enter'){buscarContenido();}">
+</div>
+
+</header>
+<!-- MEN� -->
+<span class="Estilo1">
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="https://tupsicologo.pe/todos-nuestros-profesionales/">Profesionales</a>
+  <a href="https://psicologoenperu.com/listado-de-psicologos-peru/">Servicios</a>
+  <a href="https://classroom.google.com/c/ODIxMDA2NTQ3NTMx?cjc=xbji7hip">Actividades</a>
+  <a href="https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI">Contacto</a></nav>
+</span>
+<!-- CONTENIDO PRINCIPAL -->
+<div class="contenedor">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+        <div class="titulo-area">
+            <h2>Espacio Individual</h2>
+            <div class="iconos">
+               <img src="icono1 (1).png" alt="icono" longdesc="icono_individual">
+            </div>
+        </div>
+
+        <div class="tarjetas">
+
+            <!-- PSICOLOG�A -->
+            <a href="psicologia.html" class="card">
+			     <img src="psicologia_img.gif" alt="img" longdesc="psicologia_img">
+				 <h3>Psicología</h3>
+				 <p>Información, recursos y orientación profesional para bienestar emocional.</p>
+			</a>
+
+            <!-- PODCAST -->
+            <a href="podcast.html" class="card">
+			     <img src="podcast_img.gif" alt="img" longdesc="podcast_img">
+				 <h3>Podcast</h3>
+				 <p>Contenido auditivo sobre autocuidado, salud mental y crecimiento personal.</p>
+			</a>
+
+            <!-- ARTE -->
+            <a href="arte.html" class="card">
+                <img src="arte_img.gif" alt="img" longdesc="arte_img">
+				<h3>Arte</h3>
+				<p>Actividades artísticas y creativas para la regulación emocional.</p>
+            </a>
+
+            <!-- RELAJACIÓN -->
+            <a href="relajacion.html" class="card">
+                <img src="relajacion_img.gif" alt="img" longdesc="relajacion_img">
+				<h3>Relajación</h3>
+				<p>Técnicas de escritura para relajación, orden y expresión personal.</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="info">
+        <h3>Actividades y Orientación</h3>
+        <ul>
+            <li>Reunión virtual con profesional</li>
+            <li>Sesiones de Zoom</li>
+            <li>Actividades artísticas</li>
+            <li>Meditación guiada</li>
+            <li>Técnicas de relajación</li>
+            <li>Acompañamiento psiquiátrico</li>
+            <li>Seguimiento de tratamiento (recetas, monitoreo)</li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relajaci�n</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            display: block;
+            text-decoration: none;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform .2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 10px;
+        }
+
+        .card p {
+            margin: 10px;
+            opacity: 0.8;
+        }
+    .Estilo1 {
+	font-family: "Poppins Black";
+	color: #f07ca5;
+}
+    .Estilo2 {font-family: "Now Alt"}
+    </style>
+</head>
+<style>
+    body {
+        margin: 0;
+        background: #f2f4f7;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    /* HEADER */
+    header {
+        display: flex;
+        align-items: center;
+        background: #f07ca5;
+        padding: 10px 20px;
+        color: white;
+    }
+
+    header img {
+        height: 60px;
+        margin-right: 20px;
+    }
+
+    .search-bar {
+        margin-left: auto;
+    }
+
+    .search-bar input {
+        padding: 6px 10px;
+        border: none;
+        border-radius: 5px;
+        width: 200px;
+    }
+
+    /* MEN? */
+    nav {
+        background: #e15b8b;
+        padding: 10px;
+        display: flex;
+        gap: 20px;
+        color: white;
+        font-weight: bold;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    /* CONTENIDO */
+    .contenedor {
+        width: 90%;
+        max-width: 1100px;
+        margin: 25px auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+    }
+
+    /* T?TULO */
+    .titulo-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .titulo-area h2 {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        font-size: 24px;
+        color: #2c3e50;
+    }
+
+    /* ICONOS */
+    .iconos {
+        display: flex;
+        gap: 15px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    /* TARJETAS */
+    .tarjetas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+
+    .card img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .card h3 {
+        font-family: 'Poppins', sans-serif;
+        margin: 10px 0;
+    }
+
+    .card p {
+        padding: 0 10px 10px;
+        font-size: 14px;
+        color: #444;
+    }
+
+    /* LADO DERECHO (ACTIVIDADES) */
+    .info {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .info h3 {
+        font-family: 'Poppins', sans-serif;
+        color: #e15b8b;
+        margin-top: 0;
+    }
+
+    .info ul {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+</style>
+</head>
+
+<script>
+function buscarContenido() {
+    let query = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if (query === "") {
+        alert("Escribe algo para buscar");
+        return;
+    }
+
+    // PALABRAS CLAVE → PÁGINAS
+    const rutas = {
+        "sobre nosotros": "inicio.html",
+        "nosotros": "inicio.html",
+        "individual": "individual.html",
+        "espacio individual": "individual.html",
+        "grupal": "grupal.html",
+        "espacio grupal": "grupal.html",
+        "servicios": "https://psicologoenperu.com/listado-de-psicologos-peru/",
+        "actividades": "https://classroom.google.com/c/ODIxMDA2NTQ3NTMx?cjc=xbji7hip",
+        "profesionales": "https://tupsicologo.pe/todos-nuestros-profesionales/",
+        "contacto": "https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI",
+        "whatsapp": "https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI",
+		"psicología": "psicología.html",
+		"recursos": "recursos.html",
+		"guías": "guías.html",
+		"podcast": "podcast.html",
+		"relajación": "relajación.html",
+		"reuniones": "reuniones.html",
+		"foros": "foros.html",
+		"libros": "libros.html",
+		"arte": "arte.html"
+    };
+
+    // Buscar coincidencias
+    for (let palabra in rutas) {
+        if (query.includes(palabra)) {
+            window.location.href = rutas[palabra];
+            return;
+        }
+    }
+
+    alert("No se encontró ningún resultado para: " + query);
+}
+</script>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <img src="psychis_logo.png" alt="logo" longdesc="logo_psychis"><img src="psychis_logo2.png" alt="logo" longdesc="logo_psychis2">
+
+    <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Buscar..." onKeyPress="if(event.key==='Enter'){buscarContenido();}">
+</div>
+
+</header>
+
+<!-- MEN? -->
+<nav>
+    <span class="Estilo2"><a href="index.html">Inicio</a>
+    <a href="https://tupsicologo.pe/todos-nuestros-profesionales/">Profesionales</a>
+    <a href="https://psicologoenperu.com/listado-de-psicologos-peru/">Servicios</a>
+    <a href="https://classroom.google.com/c/ODIxMDA2NTQ3NTMx?cjc=xbji7hip">Actividades</a>
+    <a href="https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI">Contacto</a></span></nav>
+
+<body>
+    <h1> <span class="Estilo1">Relajación</span> <img src="icono5.png" alt="icono" longdesc="relax" width="42" height="40" longdesc="icono3_Arte"></h1>
+
+    <div class="container">
+
+        <!-- T�cnicas de escritura -->
+		<a href="https://youtu.be/Ay8mEnHPhpw" class="card">
+			    <img src="escrituraparasanar.jpg" alt="img" longdesc="relax_1">
+				 <h3>Escritura terapéutica</h3>
+				 <p> ¿Alguna vez sentiste que tu cabeza está llena de pensamientos que no dejan de dar vueltas? La escritura terapéutica te permite vaciar todo eso en papel, transformar emociones difíciles en claridad y descubrir nuevas formas de entenderte a ti mismo. Es tu espacio seguro para explorar, soltar y reconectar contigo mismo… ¡palabra por palabra!</p>
+	  </a>
+			
+		<!-- Respiraci�n para relajaci�n -->
+		<a href="https://youtu.be/6XdnFjwCwF4" class="card">
+			     <img src="respiracion.png" alt="img" longdesc="relax_2">
+				 <h3>Respiración para relajación</h3>
+				 <p> Tomarte unos minutos para respirar de manera consciente puede transformar tu día. La respiración profunda y controlada ayuda a calmar la mente, reducir la ansiedad y reconectar con tu cuerpo. Inspira, siente el aire llenando tus pulmones… y exhala, dejando ir la tensión. ¡Un simple respiro puede hacer maravillas por tu bienestar!</p>
+	  </a>
+	 
+	 <!-- Musica relajante -->
+		<a href="https://youtu.be/aBsnQjJ2_Nk" class="card">
+			     <img src="meditacion.jpg" alt="img" longdesc="meditaci�n">
+				 <h3>Meditación guíada</h3>
+				 <p> En esta meditación guiada para la ansiedad y las emociones negativas vamos a realizar 15 minutos mágicos que te aportarán paz y calma mental además de eliminar el estrés, la ansiedad y los pensamientos negativos. Es perfecta si estás pasando un momento difícil, si acabas de sufrir una pérdida o estás pasando por un duelo, si experimentas depresión o si simplemente estás teniendo un mal día y quieres sentirte mejor al instante.</p>
+	  </a> 
+	  
+	 
+	  
+
+    </div>
+
+</body>
+</html>

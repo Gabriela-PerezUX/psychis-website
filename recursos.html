@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guías y artículos informativos</title>
+    <style>
+/* --- AJUSTES CORREGIDOS PARA BARRA DERECHA --- */
+
+/* COLUMNA DERECHA */
+.info {
+    width: 30%;
+    float: right;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+
+/* IM�GENES DE LA BARRA DERECHA */
+.info img {
+    width: 100%;   /* Evita que la barra se deforme */
+    height: auto;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+/* COLUMNA IZQUIERDA */
+.contenido {
+    width: 65%;
+    float: left;
+}
+
+/* CONTENEDOR GENERAL */
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 25px auto;
+}
+
+/* LIMPIAR FLOTES */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.Estilo3 {font-family: "Now Alt"}
+    </style>
+</head>
+<style>
+    body {
+        margin: 0;
+        background: #f2f4f7;
+        font-family: 'Now', sans-serif;
+    }
+
+    /* HEADER */
+    header {
+        display: flex;
+        align-items: center;
+        background: #f07ca5;
+        padding: 10px 20px;
+        color: white;
+    }
+
+    header img {
+        height: 60px;
+        margin-right: 20px;
+    }
+
+    .search-bar {
+        margin-left: auto;
+    }
+
+    .search-bar input {
+        padding: 6px 10px;
+        border: none;
+        border-radius: 5px;
+        width: 200px;
+    }
+
+    /* MEN? */
+    nav {
+        background: #e15b8b;
+        padding: 10px;
+        display: flex;
+        gap: 20px;
+        color: white;
+        font-weight: bold;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+
+    /* T?TULO */
+    .titulo-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .titulo-area h2 {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        font-size: 24px;
+        color: #2c3e50;
+    }
+
+    /* ICONOS */
+    .iconos {
+        display: flex;
+        gap: 15px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    /* TARJETAS */
+    .tarjetas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+
+    .card img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .card h3 {
+        font-family: 'Poppins', sans-serif;
+        margin: 10px 0;
+    }
+
+    .card p {
+        padding: 0 10px 10px;
+        font-size: 14px;
+        color: #444;
+    }
+
+    /* LADO DERECHO (ACTIVIDADES) */
+    .info {
+        width: 30%;
+		float: right; /* ESTO ES LO QUE HACE QUE SUBA */
+		background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .info h3 {
+        font-family: 'Poppins', sans-serif;
+        color: #e15b8b;
+        margin-top: 0;
+    }
+
+    .info ul {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+</style>
+<style>
+    p {
+        text-indent: 20px;
+        line-height: 1.6;
+    }
+	/* CONTENEDOR EN DOS COLUMNAS COMPATIBLE CON DREAMWEAVER 8 */
+/* CONTENEDOR EN DOS COLUMNAS COMPATIBLE CON DREAMWEAVER 8 */
+.contenedor {
+    display: flex;
+    gap: 20px; /* espacio entre columnas */
+}
+.contenido {
+    flex: 2;
+}
+.info {
+    flex: 1;
+}
+}
+
+/* COLUMNA IZQUIERDA */
+.contenido {
+    width: 65%;
+    float: left;
+}
+
+/* COLUMNA DERECHA */
+.info {
+    width: 30%;
+    float: right;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* LIMPIAR FLOTADOS */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.Estilo2 {
+	font-family: "Now Alt Black";
+	color: #e15b8b;
+	font-weight: bold;
+}
+</style>
+
+</head>
+
+<script>
+function buscarContenido() {
+    let query = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if (query === "") {
+        alert("Escribe algo para buscar");
+        return;
+    }
+
+    // PALABRAS CLAVE → PÁGINAS
+    const rutas = {
+        "sobre nosotros": "inicio.html",
+        "nosotros": "inicio.html",
+        "individual": "individual.html",
+        "espacio individual": "individual.html",
+        "grupal": "grupal.html",
+        "espacio grupal": "grupal.html",
+        "servicios": "https://psicologoenperu.com/listado-de-psicologos-peru/",
+        "actividades": "https://classroom.google.com/c/ODIxMDA2NTQ3NTMx?cjc=xbji7hip",
+        "profesionales": "https://tupsicologo.pe/todos-nuestros-profesionales/",
+        "contacto": "https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI",
+        "whatsapp": "https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI",
+		"psicología": "psicología.html",
+		"recursos": "recursos.html",
+		"guías": "guías.html",
+		"podcast": "podcast.html",
+		"relajación": "relajación.html",
+		"reuniones": "reuniones.html",
+		"foros": "foros.html",
+		"libros": "libros.html",
+		"arte": "arte.html"
+
+    };
+
+    // Buscar coincidencias
+    for (let palabra in rutas) {
+        if (query.includes(palabra)) {
+            window.location.href = rutas[palabra];
+            return;
+        }
+    }
+
+    alert("No se encontró ningún resultado para: " + query);
+}
+</script>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <img src="psychis_logo.png" alt="logo" longdesc="logo_psychis"><img src="psychis_logo2.png" alt="logo" longdesc="logo_psychis2">
+
+    <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Buscar..." onKeyPress="if(event.key==='Enter'){buscarContenido();}">
+</div>
+
+</header>
+
+<!-- MEN� -->
+<nav>
+    <span class="Estilo3"><a href="index.html">Inicio</a>
+    <a href="https://tupsicologo.pe/todos-nuestros-profesionales/">Profesionales</a>
+    <a href="https://psicologoenperu.com/listado-de-psicologos-peru/">Servicios</a>
+    <a href="https://classroom.google.com/c/ODIxMDA2NTQ3NTMx?cjc=xbji7hip">Actividades</a>
+    <a href="https://chat.whatsapp.com/F3HBc9dy3ScEXx4MuBBOwI">Contacto</a></span></nav>
+
+<!-- CONTENIDO GENERAL -->
+<div class="contenedor clearfix">
+
+    <div class="contenedor clearfix">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="contenido" style="float:left; clear:both;">
+
+        <h1 class="Estilo2">Recursos prácticos y descargables</h1>
+
+        <div class="lista-articulos">
+
+    <h2 style="color:#e15b8b; font-family:'Poppins', sans-serif;">Recursos descargables</h2>
+
+    <p align="left">
+        <a href="https://www.canva.com/design/DAG6JHgPpkc/ZH-FALB8RgV8u8fPa-jOKQ/edit?utm_content=DAG6JHgPpkc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+            <strong>Guía rápida de respiración consciente</strong>        </a><br>
+        Un kit de emergencia mental. Aprende las 3 técnicas de respiración más efectivas (como el 4-7-8 y la Box Breathing) para calmar tu ansiedad en menos de 5 minutos.    </p>
+		<div align="center"><img src="breathing.gif" alt="img" longdesc="breath">
+	      </div>
+		<p align="left">&nbsp;</p>
+    <div align="center">
+      <p align="left"><a href="https://www.canva.com/design/DAG6Jc-FGGY/DPeyKvF9WqkWz9y0zLvYWA/edit?utm_content=DAG6Jc-FGGY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><strong>Planificador de emociones semanales</strong></a><br>
+        Imprimible: Organiza tu estado emocional día por día y reconoce tus patrones internos.    </p>
+		<img src="emotions.gif" alt="img" longdesc="emociones">
+      </div>
+    <p align="center">
+        <a href="https://www.canva.com/design/DAG6JmT3KB8/JQacnYEaw5tqmx05pRHw5g/edit?utm_content=DAG6JmT3KB8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><strong>Hoja de registro para crisis de ansiedad</strong></a><br>
+        Imprimible: Una herramienta para identificar detonantes y técnicas de afrontamiento.
+		<img src="anxiety.gif" alt="img" longdesc="ansiedad">    </p>
+
+    <p align="center">
+        <a href="https://www.canva.com/design/DAG6Jvi3L78/DWgZa0aqtmWv4444jOEMnA/edit?utm_content=DAG6Jvi3L78&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><strong>Mini diario terapéutico</strong></a><br>
+        Imprimible: Microespacios de escritura para liberar tensión y ordenar la mente.
+		<img src="escribir.gif" alt="img" longdesc="escritura">    </p>
+
+</div>
+		   
+           <!-- cierre lista-articulos -->
+      </div>
+		 
+  </div> <!-- cierre contenido -->
+
+    <!-- COLUMNA DERECHA (BARRA LATERAL) -->
+    <div class="info">
+        <h3>Otros artículos de interés</h3>
+        <ul>
+            <li><a href="https://www.mayoclinic.org/es/healthy-lifestyle/stress-management/in-depth/relaxation-technique/art-20045368">Técnicas de respiración para reducir estrés</a></li>
+			<img src="breath.gif" alt="img" width="253" height="278" longdesc="respirar">
+            <li><a href="https://www.unobravo.com/es/blog/como-mejorar-la-autoestima">Cómo mejorar tu autoestima día a día</a></li>
+			<img src="autoestima.gif" alt="img" width="258" height="247" longdesc="autoestima">
+            <li><a href="https://scholasoccurrentes.org/la-salud-mental/?utm_medium=cpc&utm_source=google&&utm_campaign=21372690950&utm_content={adgroupname}&utm_term=la%20importancia%20de%20la%20salud%20mental&gad_source=1&gad_campaignid=21372690950&gbraid=0AAAAADm1mHePhjU6JeYe9s9FrYCVpkh7W&gclid=Cj0KCQiA0KrJBhCOARIsAGIy9wBerETda19o53s6ne36Jjz3f8BlfCe110OUJtc0UC3eTDCa8avVfJ8aAjSrEALw_wcB">Señales de alerta en la salud mental</a></li>
+			<img src="salud mental.gif" alt="img" width="245" height="273" longdesc="saludMental">
+            <li><a href="https://gokai.es/meditacion-nivel-2/?gad_source=1&gad_campaignid=21688493165&gbraid=0AAAAADQZRqy0ybQ9ODMWVI7Xna0Qzzs0d&gclid=Cj0KCQiA0KrJBhCOARIsAGIy9wDly8jtxlxh72pj5Mx2p1Mxno8wfgeHUMY-zPdCgVtAqg47EMExTHgaAhv1EALw_wcB">Mindfulness para principiantes</a></li>
+			<img src="mindfulness.gif" alt="img" width="277" height="206" longdesc="mindfulness">
+            <li><a href="https://positivepsychology.com/great-self-care-setting-healthy-boundaries/">Cómo construir límites saludables</a></li>
+			<img src="relaciones.gif" alt="img" width="266" height="189" longdesc="limites">
+        </ul>
+    </div>
+	
+</body>
